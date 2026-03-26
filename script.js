@@ -32,7 +32,7 @@ const jerseys = [
   /* ── FOOTBALL ────────────────────────────────────────────────── */
   {
     id    : 1,
-    image : 'images/realmadrid-home.jpg',   // ← put your image filename here
+    image : 'images/realmadrid-home.jpeg',   // ← put your image filename here
     club  : 'Real Madrid',
     name  : 'Home Jersey 2024/25',
     price : 35,
@@ -42,7 +42,7 @@ const jerseys = [
   },
   {
     id    : 2,
-    image : 'images/barcelona-home.jpg',
+    image : 'images/barcelona-home.jpeg',
     club  : 'FC Barcelona',
     name  : 'Home Jersey 2024/25',
     price : 35,
