@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DareFit — Official & Vintage Jerseys</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  Free worldwide shipping on orders over $120 <span>|</span> Authentic jerseys guaranteed <span>|</span> Message us on WhatsApp for custom orders
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Dare<span>Fit</span></div>
+    <div class="search-bar" id="searchWrap">
+      <input type="text" id="searchInput" placeholder="Search by club, country, player…" autocomplete="off">
+      <button onclick="doSearch()">SEARCH</button>
+      <div id="searchResults"></div>
+    </div>
+    <div class="header-actions">
+      <a href="https://wa.me/2348000000000?text=Hi%2C%20I%27d%20like%20to%20browse%20your%20jerseys!" class="btn-wa" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button class="cart-btn" onclick="openCart()">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0" fill="none"/></svg>
+        Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+
+    <div class="nav-item">
+      <a href="#" class="active" onclick="filterCat(event,'all')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        All
+      </a>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'football')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <polygon points="12,3 15,8 12,13 9,8" fill="currentColor" opacity=".5" stroke="none"/>
+          <polygon points="3.5,8.5 7,7 9,8 8,11.5 4.5,11.5" fill="currentColor" opacity=".4" stroke="none"/>
+          <polygon points="20.5,8.5 17,7 15,8 16,11.5 19.5,11.5" fill="currentColor" opacity=".4" stroke="none"/>
+          <polygon points="4.5,14 8,12 9,14.5 7,18 4,17" fill="currentColor" opacity=".4" stroke="none"/>
+          <polygon points="19.5,14 16,12 15,14.5 17,18 20,17" fill="currentColor" opacity=".4" stroke="none"/>
+          <polygon points="12,21 9.5,18 11,15.5 13,15.5 14.5,18" fill="currentColor" opacity=".5" stroke="none"/>
+        </svg>
+        Football ▾
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-header">Football Leagues</div>
+        <a href="#" onclick="filterCat(event,'football')"><span class="di">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> Premier League</a>
+        <a href="#" onclick="filterCat(event,'football')"><span class="di">🇪🇸</span> La Liga</a>
+        <a href="#" onclick="filterCat(event,'football')"><span class="di">🇮🇹</span> Serie A</a>
+        <a href="#" onclick="filterCat(event,'football')"><span class="di">🇩🇪</span> Bundesliga</a>
+        <a href="#" onclick="filterCat(event,'football')"><span class="di">🇫🇷</span> Ligue 1</a>
+        <a href="#" onclick="filterCat(event,'football')"><span class="di">🏆</span> Champions League</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'basketball')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18M3 12h18"/>
+          <path d="M5.6 5.6a9 9 0 0112.8 0M5.6 18.4a9 9 0 0112.8 0" stroke-width="1.2"/>
+        </svg>
+        Basketball ▾
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-header">NBA Teams</div>
+        <a href="#" onclick="filterCat(event,'basketball')"><span class="di">💛</span> LA Lakers</a>
+        <a href="#" onclick="filterCat(event,'basketball')"><span class="di">🔴</span> Chicago Bulls</a>
+        <a href="#" onclick="filterCat(event,'basketball')"><span class="di">💙</span> Golden State Warriors</a>
+        <a href="#" onclick="filterCat(event,'basketball')"><span class="di">🌊</span> Miami Heat</a>
+        <a href="#" onclick="filterCat(event,'basketball')"><span class="di">🟢</span> Boston Celtics</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'nfl')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <ellipse cx="12" cy="12" rx="9" ry="5.5" transform="rotate(-35 12 12)"/>
+          <line x1="7.5" y1="7.5" x2="16.5" y2="16.5" stroke-width="1.2"/>
+          <line x1="9.5" y1="6" x2="10.5" y2="9" stroke-width="1.2"/>
+          <line x1="11" y1="5" x2="12" y2="8" stroke-width="1.2"/>
+          <line x1="14" y1="15.5" x2="15" y2="18.5" stroke-width="1.2"/>
+          <line x1="15.5" y1="14" x2="16.5" y2="17" stroke-width="1.2"/>
+        </svg>
+        NFL ▾
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-header">NFL Teams</div>
+        <a href="#" onclick="filterCat(event,'nfl')"><span class="di">🔴</span> Kansas City Chiefs</a>
+        <a href="#" onclick="filterCat(event,'nfl')"><span class="di">⭐</span> Dallas Cowboys</a>
+        <a href="#" onclick="filterCat(event,'nfl')"><span class="di">💚</span> Philadelphia Eagles</a>
+        <a href="#" onclick="filterCat(event,'nfl')"><span class="di">🟤</span> San Francisco 49ers</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'vintage')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <polyline points="12,7 12,12 15,15"/>
+          <path d="M3 3l3 3M21 3l-3 3"/>
+        </svg>
+        Vintage ▾
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-header">Vintage Era</div>
+        <a href="#" onclick="filterCat(event,'vintage')"><span class="di">🥇</span> 1970s Classics</a>
+        <a href="#" onclick="filterCat(event,'vintage')"><span class="di">🏆</span> 1980s Legends</a>
+        <a href="#" onclick="filterCat(event,'vintage')"><span class="di">⚽</span> 1990s Icons</a>
+        <a href="#" onclick="filterCat(event,'vintage')"><span class="di">🎖️</span> 2000s Retro</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'national')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/>
+          <ellipse cx="12" cy="12" rx="4" ry="9"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke-width="1.2"/>
+          <line x1="3" y1="15" x2="21" y2="15" stroke-width="1.2"/>
+        </svg>
+        National Teams ▾
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-header">Countries</div>
+        <a href="#" onclick="filterCat(event,'national')"><span class="di">🇳🇬</span> Nigeria</a>
+        <a href="#" onclick="filterCat(event,'national')"><span class="di">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> England</a>
+        <a href="#" onclick="filterCat(event,'national')"><span class="di">🇩🇪</span> Germany</a>
+        <a href="#" onclick="filterCat(event,'national')"><span class="di">🇧🇷</span> Brazil</a>
+        <a href="#" onclick="filterCat(event,'national')"><span class="di">🇫🇷</span> France</a>
+        <a href="#" onclick="filterCat(event,'national')"><span class="di">🇦🇷</span> Argentina</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'new')">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" opacity=".8">
+          <polygon points="12,2 14.5,9.5 22,9.5 16,14 18.5,21.5 12,17 5.5,21.5 8,14 2,9.5 9.5,9.5"/>
+        </svg>
+        New Arrivals ▾
+      </a>
+      <div class="dropdown">
+        <div class="dropdown-header">Latest Drops</div>
+        <a href="#" onclick="filterCat(event,'new')"><span class="di">🔥</span> This Week</a>
+        <a href="#" onclick="filterCat(event,'new')"><span class="di">⚽</span> New Football</a>
+        <a href="#" onclick="filterCat(event,'new')"><span class="di">🏀</span> New Basketball</a>
+        <a href="#" onclick="filterCat(event,'new')"><span class="di">🌍</span> New National</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="#" onclick="filterCat(event,'sale')" style="color:#ff4500">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        Sale 🔥
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Nigeria's #1<br><em>Jersey Store</em></h1>
+  <p>Football, Basketball, NFL, Vintage — authentic and replica jerseys for every fan worldwide.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+    <a href="https://wa.me/2348000000000?text=Hi%2C%20I%27d%20like%20to%20place%20a%20custom%20order!" target="_blank">
+      <button class="btn-outline">Custom Order via WhatsApp</button>
+    </a>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section">
+  <div class="sec-title">Shop by Category</div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="filterCatDirect('football')">
+      <div class="icon">⚽</div><div class="name">Football</div><div class="count">120+ jerseys</div>
+    </div>
+    <div class="cat-card" onclick="filterCatDirect('basketball')">
+      <div class="icon">🏀</div><div class="name">Basketball</div><div class="count">80+ jerseys</div>
+    </div>
+    <div class="cat-card" onclick="filterCatDirect('nfl')">
+      <div class="icon">🏈</div><div class="name">NFL</div><div class="count">60+ jerseys</div>
+    </div>
+    <div class="cat-card" onclick="filterCatDirect('vintage')">
+      <div class="icon">🏆</div><div class="name">Vintage</div><div class="count">45+ jerseys</div>
+    </div>
+    <div class="cat-card" onclick="filterCatDirect('national')">
+      <div class="icon">🌍</div><div class="name">National Teams</div><div class="count">50+ jerseys</div>
+    </div>
+    <div class="cat-card" onclick="filterCatDirect('new')">
+      <div class="icon">🔥</div><div class="name">New Arrivals</div><div class="count">20+ jerseys</div>
+    </div>
+  </div>
+</div>
+
+<div class="banner-strip">🔥 DareFit — Premium Jerseys Delivered Worldwide · Order via WhatsApp</div>
+
+<!-- JERSEY SHOP -->
+<div class="section" id="shop">
+  <div class="sec-title" id="shopTitle">
+    Featured Jerseys <span class="badge" id="shopBadge">ALL</span>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="setFilter(this,'all')">All</button>
+    <button class="filter-btn" onclick="setFilter(this,'football')">⚽ Football</button>
+    <button class="filter-btn" onclick="setFilter(this,'basketball')">🏀 Basketball</button>
+    <button class="filter-btn" onclick="setFilter(this,'nfl')">🏈 NFL</button>
+    <button class="filter-btn" onclick="setFilter(this,'vintage')">🏆 Vintage</button>
+    <button class="filter-btn" onclick="setFilter(this,'national')">🌍 National</button>
+    <button class="filter-btn" onclick="setFilter(this,'new')">🔥 New Arrivals</button>
+  </div>
+  <div class="jersey-grid" id="jerseyGrid"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>DareFit</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Authenticity Guarantee</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Football</h4>
+      <ul>
+        <li><a href="#">Premier League</a></li>
+        <li><a href="#">La Liga</a></li>
+        <li><a href="#">Serie A</a></li>
+        <li><a href="#">Champions League</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Basketball & NFL</h4>
+      <ul>
+        <li><a href="#">NBA Jerseys</a></li>
+        <li><a href="#">NFL Jerseys</a></li>
+        <li><a href="#">Retro NBA</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><a href="https://wa.me/2348000000000" target="_blank">WhatsApp Us</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 DareFit. All rights reserved.</span>
+    <span>Authentic Jerseys · Worldwide Shipping</span>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h2>Your Cart</h2>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <span class="total-amt" id="cartTotal">$0</span>
+    </div>
+    <button class="checkout-wa" onclick="checkoutWhatsApp()">
+      <svg viewBox="0 0 24 24" width="18" height="18" style="fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order via WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- script.js must be at the bottom of body, AFTER all HTML elements -->
+<script src="script.js"></script>
+
+</body>
+</html>
