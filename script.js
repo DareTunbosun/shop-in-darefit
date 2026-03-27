@@ -32,7 +32,7 @@ const jerseys = [
   /* ── FOOTBALL ────────────────────────────────────────────────── */
   {
     id    : 1,
-    image : 'images/realmadrid-home.jpg',   // ← put your image filename here
+    image : 'images/realmadrid-home.jpeg',   // ← put your image filename here
     club  : 'Real Madrid',
     name  : 'Home Jersey 2024/25',
     price : 14000,
@@ -42,7 +42,7 @@ const jerseys = [
   },
   {
     id    : 2,
-    image : 'images/barcelona-home.jpg',
+    image : 'images/barcelona-home.jpeg',
     club  : 'FC Barcelona',
     name  : 'Home Jersey 2024/25',
     price : 14000,
@@ -52,61 +52,61 @@ const jerseys = [
   },
   {
     id    : 3,
-    image : 'images/mancity-home.jpg',
+    image : 'images/mancity-home.jpeg',
     club  : 'Manchester City',
     name  : 'Home Jersey 2024/25',
-    price : 33,
-    old   : 50,
+    price : 14000,
+    old   : 16000,
     tag   : '',
     cat   : 'football'
   },
   {
     id    : 4,
-    image : 'images/arsenal-home.jpg',
+    image : 'images/arsenal-home.jpeg',
     club  : 'Arsenal FC',
     name  : 'Home Jersey 2024/25',
-    price : 33,
-    old   : 0,
+    price : 16000,
+    old   : 14000,
     tag   : '',
     cat   : 'football'
   },
   {
     id    : 5,
-    image : 'images/chelsea-away.jpg',
+    image : 'images/chelsea-away.jpeg',
     club  : 'Chelsea FC',
     name  : 'Away Jersey 2024/25',
-    price : 33,
-    old   : 0,
+    price : 16000,
+    old   : 14000,
     tag   : '',
     cat   : 'football'
   },
   {
     id    : 6,
-    image : 'images/psg-home.jpg',
+    image : 'images/psg-home.jpeg',
     club  : 'Paris Saint-Germain',
     name  : 'Home Jersey 2024/25',
-    price : 35,
-    old   : 52,
+    price : 14000,
+    old   : 16500,
     tag   : 'new',
     cat   : 'football'
   },
   {
     id    : 7,
-    image : 'images/juventus-home.jpg',
+    image : 'images/juventus-home.jpeg',
     club  : 'Juventus',
     name  : 'Home Jersey 2024/25',
-    price : 33,
-    old   : 0,
-    tag   : '',
+    price : 14000,
+    old   : 16000,
+    tag   : 'new',
     cat   : 'football'
   },
   {
     id    : 8,
-    image : 'images/bayern-home.jpg',
+    image : 'images/bayern-home.jpeg',
     club  : 'Bayern Munich',
     name  : 'Home Jersey 2024/25',
-    price : 35,
-    old   : 50,
+    price : 15000,
+    old   : 17000,
     tag   : '',
     cat   : 'football'
   },
