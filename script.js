@@ -9,7 +9,7 @@
       - image : filename e.g. "realmadrid.jpg" or "images/realmadrid.jpg"
       - club  : team or country name (small text above the jersey title)
       - name  : jersey title (the main product name shown on the card)
-      - price : your selling price (number only, no $ sign)
+      - price : your selling price (number only, no # sign)
       - old   : original/crossed-out price — set to 0 if there is no discount
       - tag   : "new"     → shows blue  NEW IN  badge
                 "vintage" → shows gold  VINTAGE badge
@@ -35,8 +35,8 @@ const jerseys = [
     image : 'images/realmadrid-home.jpeg',   // ← put your image filename here
     club  : 'Real Madrid',
     name  : 'Home Jersey 2024/25',
-    price : 35,
-    old   : 55,                             // ← set to 0 if no discount
+    price : 14000,
+    old   : 16000,                             // ← set to 0 if no discount
     tag   : 'new',                          // "new" | "vintage" | ""
     cat   : 'football'
   },
@@ -45,8 +45,8 @@ const jerseys = [
     image : 'images/barcelona-home.jpeg',
     club  : 'FC Barcelona',
     name  : 'Home Jersey 2024/25',
-    price : 35,
-    old   : 55,
+    price : 14000,
+    old   : 16000,
     tag   : 'new',
     cat   : 'football'
   },
@@ -362,7 +362,7 @@ function renderCartItems() {
       + '<div class="ci-details">'
       + '<div class="ci-club">' + item.club + '</div>'
       + '<div class="ci-name">' + item.name + '</div>'
-      + '<div class="ci-price">$' + item.price + '</div>'
+      + '<div class="ci-price">#' + item.price + '</div>'
       + '<div class="ci-qty">'
       + '<button onclick="changeQty(' + item.id + ',-1)">−</button>'
       + '<span>' + item.qty + '</span>'
@@ -371,7 +371,7 @@ function renderCartItems() {
       + '<button class="ci-remove" onclick="removeFromCart(' + item.id + ')">✕</button>'
       + '</div>';
   }).join('');
-  document.getElementById('cartTotal').textContent = '$' + cartTotal();
+  document.getElementById('cartTotal').textContent = '#' + cartTotal();
 }
 
 function openCart() {
@@ -391,9 +391,9 @@ function checkoutWhatsApp() {
   if (cart.length === 0) return;
   var msg = 'Hi DareFit! I want to order:\n\n';
   cart.forEach(function(item) {
-    msg += '• ' + item.club + ' - ' + item.name + ' x' + item.qty + ' = $' + (item.price * item.qty) + '\n';
+    msg += '• ' + item.club + ' - ' + item.name + ' x' + item.qty + ' = #' + (item.price * item.qty) + '\n';
   });
-  msg += '\nTotal: $' + cartTotal() + '\n\nPlease confirm availability and shipping. Thank you!';
+  msg += '\nTotal: #' + cartTotal() + '\n\nPlease confirm availability and shipping. Thank you!';
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
 
@@ -459,12 +459,12 @@ function renderJerseys() {
   var cartSVG = '<svg viewBox="0 0 24 24" width="14" height="14" style="stroke:currentColor;fill:none;flex-shrink:0" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>';
 
   grid.innerHTML = list.map(function(j) {
-    var msg = encodeURIComponent('Hi DareFit! I want to buy: ' + j.club + ' - ' + j.name + ' ($' + j.price + ')');
+    var msg = encodeURIComponent('Hi DareFit! I want to buy: ' + j.club + ' - ' + j.name + ' (#' + j.price + ')');
     var waLink = 'https://wa.me/' + WA_NUMBER + '?text=' + msg;
     var tagHtml = j.tag
       ? '<div class="badge-tag ' + j.tag + '">' + (j.tag === 'vintage' ? 'VINTAGE' : 'NEW IN') + '</div>'
       : '';
-    var oldHtml = j.old ? '<span class="old-price">$' + j.old + '</span>' : '';
+    var oldHtml = j.old ? '<span class="old-price">#' + j.old + '</span>' : '';
 
     return '<div class="jersey-card">'
       + '<div class="img-wrap">'
@@ -480,7 +480,7 @@ function renderJerseys() {
       + '<div class="info">'
       + '<div class="club">' + j.club + '</div>'
       + '<div class="title">' + j.name + '</div>'
-      + '<div class="price-row"><span class="price">$' + j.price + '</span>' + oldHtml + '</div>'
+      + '<div class="price-row"><span class="price">#' + j.price + '</span>' + oldHtml + '</div>'
       + '<div class="card-btns">'
       + '<a href="' + waLink + '" target="_blank" style="flex:1.2">'
       + '<button class="buy-btn" style="width:100%">' + waSVG + ' Buy Now</button>'
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
         + '" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.innerHTML=\'👕\'"></div>'
         + '<div><div class="sr-name">' + j.name + '</div>'
         + '<div class="sr-club">' + j.club + ' · ' + j.cat.charAt(0).toUpperCase() + j.cat.slice(1) + '</div></div>'
-        + '<div class="sr-price">$' + j.price + '</div>'
+        + '<div class="sr-price">#' + j.price + '</div>'
         + '</div>';
     }).join('');
     searchResultsEl.style.display = 'block';
