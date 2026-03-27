@@ -114,50 +114,50 @@ const jerseys = [
   /* ── BASKETBALL ──────────────────────────────────────────────── */
   {
     id    : 9,
-    image : 'images/lakers-city.jpg',
+    image : 'images/lakers-city.jpeg',
     club  : 'LA Lakers',
     name  : 'City Edition Jersey',
-    price : 40,
-    old   : 60,
+    price : 17000,
+    old   : 0,
     tag   : 'new',
     cat   : 'basketball'
   },
   {
     id    : 10,
-    image : 'images/bulls-home.jpg',
+    image : 'images/bulls-home.jpeg',
     club  : 'Chicago Bulls',
     name  : 'Home Jersey',
-    price : 38,
+    price : 17000,
     old   : 0,
     tag   : '',
     cat   : 'basketball'
   },
   {
     id    : 11,
-    image : 'images/warriors-classic.jpg',
+    image : 'images/warriors-classic.jpeg',
     club  : 'Golden State Warriors',
     name  : 'Classic Jersey',
-    price : 38,
+    price : 17000,
     old   : 0,
     tag   : '',
     cat   : 'basketball'
   },
   {
     id    : 12,
-    image : 'images/heat-vice.jpg',
+    image : 'images/heat-vice.jpeg',
     club  : 'Miami Heat',
     name  : 'Vice City Jersey',
-    price : 42,
-    old   : 65,
+    price : 17000,
+    old   : 0,
     tag   : 'new',
     cat   : 'basketball'
   },
   {
     id    : 13,
-    image : 'images/celtics-home.jpg',
+    image : 'images/celtics-home.jpeg',
     club  : 'Boston Celtics',
     name  : 'Home Jersey',
-    price : 38,
+    price : 16500,
     old   : 0,
     tag   : '',
     cat   : 'basketball'
