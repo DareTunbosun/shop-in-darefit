@@ -124,7 +124,7 @@ const jerseys = [
   },
   {
     id    : 10,
-    image : 'images/bulls-home.jpeg',
+    image : 'images/bulls-home.jpg',
     club  : 'Chicago Bulls',
     name  : 'Home Jersey',
     price : 17000,
@@ -134,7 +134,7 @@ const jerseys = [
   },
   {
     id    : 11,
-    image : 'images/warriors-classic.jpeg',
+    image : 'images/warriors-classic.jpg',
     club  : 'Golden State Warriors',
     name  : 'Classic Jersey',
     price : 17000,
@@ -144,7 +144,7 @@ const jerseys = [
   },
   {
     id    : 12,
-    image : 'images/heat-vice.jpeg',
+    image : 'images/heat-vice.jpg',
     club  : 'Miami Heat',
     name  : 'Vice City Jersey',
     price : 17000,
@@ -154,7 +154,7 @@ const jerseys = [
   },
   {
     id    : 13,
-    image : 'images/celtics-home.jpeg',
+    image : 'images/celtics-home.jpg',
     club  : 'Boston Celtics',
     name  : 'Home Jersey',
     price : 16500,
